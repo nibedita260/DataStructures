@@ -29,6 +29,9 @@ namespace DataStructures
                         linkedList.Search(40);
                         linkedList.RemoveFirstElem();
                         linkedList.Display();
+                        linkedList.Size();
+                        linkedList.Sort();
+                        linkedList.Display();
                         break;
                     default:
                         Console.WriteLine("choose valid one");

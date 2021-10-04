@@ -116,5 +116,43 @@ namespace DataStructures
             }
             return null;
         }
+        public void Size()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            int count = 0;
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.Next;
+                count++;
+            }
+            Console.WriteLine("Size of the LinkedList is " + count);
+        }
+        public void Sort()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                temp = this.head;
+            }
+            Node prev = this.head;
+            Node curr = this.head.Next;
+            while (temp != null) {
+                if (prev.data < curr.data)
+                {
+                    prev = curr;
+                    curr = curr.Next;
+                    Console.WriteLine(curr + " ");
+                }
+                temp.Next = prev.Next;
+                prev.Next = temp;
+                curr.Next = prev.Next;
+            }
+        }
     }
 }
