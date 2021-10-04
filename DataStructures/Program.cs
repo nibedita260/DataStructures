@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack");
+                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -19,15 +19,15 @@ namespace DataStructures
                         linkedList.Add(56);
                         linkedList.Add(30);
                         linkedList.Add(70);
-                        //linkedList.AddReverseData(70);
-                        //linkedList.AddReverseData(30);
-                        //linkedList.AddReverseData(56);
-                        //linkedList.InsertedAtPosition(30, 1);
-                        //linkedList.RemoveFirstElem();
-                        //linkedList.RemoveLastElem();
+                        linkedList.AddReverseData(70);
+                        linkedList.AddReverseData(30);
+                        linkedList.AddReverseData(56);
+                        linkedList.InsertedAtPosition(30, 1);
+                        linkedList.RemoveFirstElem();
+                        linkedList.RemoveLastElem();
                         linkedList.InsertedAtPosition(40, 2);
-                        //linkedList.Search(40);
-                        //linkedList.RemoveFirstElem();
+                        linkedList.Search(40);
+                        linkedList.RemoveFirstElem();
                         linkedList.Display();
                         break;
                     case 2:
@@ -35,13 +35,17 @@ namespace DataStructures
                         linkedListStack.Push(56);
                         linkedListStack.Push(30);
                         linkedListStack.Push(70);
-                        //linkedListStack.Display();
-                        //linkedListStack.Peek();
-                        //linkedListStack.Display();
-                        //linkedListStack.Pop();
-                        //linkedListStack.Display();
+                        linkedListStack.Peek();
+                        linkedListStack.Pop();
                         linkedListStack.IsEmpty();
                         linkedListStack.Display();
+                        break;
+                    case 3:LinkedListQueue linkedListQueue = new LinkedListQueue();
+                        linkedListQueue.Enqueue(56);
+                        linkedListQueue.Enqueue(30);
+                        linkedListQueue.Enqueue(70);
+                        linkedListQueue.Dequeue();
+                        linkedListQueue.Display();
                         break;
                     default:Console.WriteLine("choose valid one");
                         break;
