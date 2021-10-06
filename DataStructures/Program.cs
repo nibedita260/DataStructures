@@ -10,7 +10,6 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList");
                 Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue 4.BankingCashCounter");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
@@ -30,9 +29,6 @@ namespace DataStructures
                         linkedList.Search(40);
                         linkedList.RemoveFirstElem();
                         linkedList.Display();
-                        linkedList.Size();
-                        linkedList.Sort();
-                        linkedList.Display();
                         break;
                     case 2:
                         LinkedListStack linkedListStack = new LinkedListStack();
@@ -44,20 +40,24 @@ namespace DataStructures
                         linkedListStack.IsEmpty();
                         linkedListStack.Display();
                         break;
-                    case 3:LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
+                    case 3:
+                        LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
                         linkedListQueue.Enqueue("Nibedita");
                         linkedListQueue.Enqueue("is");
                         linkedListQueue.Enqueue("talented");
                         linkedListQueue.Dequeue();
                         linkedListQueue.Display();
                         break;
-                    case 4:BankCashCounter bankingCashCounter = new BankCashCounter();
+                    case 4:
+                        BankCashCounter bankingCashCounter = new BankCashCounter();
                         bankingCashCounter.CashCounter();
                         break;
-                    default:Console.WriteLine("choose valid one");
+                    default:
+                        Console.WriteLine("choose valid one");
                         break;
                 }
             }
+
         }
     }
 }
