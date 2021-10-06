@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue");
+                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue 4.BankingCashCounter");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -40,12 +40,15 @@ namespace DataStructures
                         linkedListStack.IsEmpty();
                         linkedListStack.Display();
                         break;
-                    case 3:LinkedListQueue linkedListQueue = new LinkedListQueue();
-                        linkedListQueue.Enqueue(56);
-                        linkedListQueue.Enqueue(30);
-                        linkedListQueue.Enqueue(70);
+                    case 3:LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
+                        linkedListQueue.Enqueue("Nibedita");
+                        linkedListQueue.Enqueue("is");
+                        linkedListQueue.Enqueue("talented");
                         linkedListQueue.Dequeue();
                         linkedListQueue.Display();
+                        break;
+                    case 4:BankCashCounter bankingCashCounter = new BankCashCounter();
+                        bankingCashCounter.CashCounter();
                         break;
                     default:Console.WriteLine("choose valid one");
                         break;

@@ -4,19 +4,19 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class LinkedListQueue
+    public class LinkedListQueue<T> where T:IComparable
     {
-        public Node front;
-        public void Enqueue(int data)
+        public Node<T> front;
+        public void Enqueue(T data)
         {
-            Node node = new Node(data);
+            Node<T> node = new Node<T>(data);
             if (this.front == null)
             {
                 front = node;
             }
             else
             {
-                Node temp = front;
+                Node<T> temp = front;
                 while (temp.Next != null)
                 {
                     temp = temp.Next;
@@ -27,7 +27,7 @@ namespace DataStructures
         }
         public void Display()
         {
-            Node temp = this.front;
+            Node<T> temp = this.front;
             if (temp == null)
             {
                 Console.WriteLine("Queue is empty");
@@ -48,6 +48,24 @@ namespace DataStructures
             }
             Console.WriteLine("data dequeued is {0} ", this.front.data);
             this.front = this.front.Next;
+        }
+        public bool IsEmpty()
+        {
+            Node<T> temp = this.front;
+            if (temp == null)
+                return true;
+            return false;
+        }
+        public int Size()
+        {
+            int count = 0;
+            Node<T> temp = this.front;
+            while (temp != null)
+            {
+                count++;
+                temp = temp.Next;
+            }
+            return count;
         }
     }
 }
