@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue 4.BankingCashCounter");
+                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue 4.BankingCashCounter 5.BalancedParanthesis");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -31,10 +31,10 @@ namespace DataStructures
                         linkedList.Display();
                         break;
                     case 2:
-                        LinkedListStack linkedListStack = new LinkedListStack();
-                        linkedListStack.Push(56);
-                        linkedListStack.Push(30);
-                        linkedListStack.Push(70);
+                        LinkedListStack<string> linkedListStack = new LinkedListStack<string>();
+                        linkedListStack.Push("I am");
+                        linkedListStack.Push("not");
+                        linkedListStack.Push("contents");
                         linkedListStack.Peek();
                         linkedListStack.Pop();
                         linkedListStack.IsEmpty();
@@ -52,8 +52,15 @@ namespace DataStructures
                         BankCashCounter bankingCashCounter = new BankCashCounter();
                         bankingCashCounter.CashCounter();
                         break;
+<<<<<<< HEAD
                     default:
                         Console.WriteLine("choose valid one");
+=======
+                    case 5:BalancedParanthesis balancedParanthesis = new BalancedParanthesis();
+                        balancedParanthesis.CheckIsBalanced();
+                        break;
+                    default:Console.WriteLine("choose valid one");
+>>>>>>> UC5-BalanceParanthesis
                         break;
                 }
             }

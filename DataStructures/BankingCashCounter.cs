@@ -44,7 +44,7 @@ namespace DataStructures
                         double withdraw = Convert.ToDouble(Console.ReadLine());
                         if (withdraw > Amount)
                         {
-                            Console.WriteLine("Balance is not eficient.....");
+                            Console.WriteLine("Insufficient Balance.....");
                         }
                         else
                         {
