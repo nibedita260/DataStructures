@@ -4,11 +4,11 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class Node
+    public class Node<T> where T:IComparable
     {
-        public int data;
-        public Node Next;
-        public Node(int data)
+        public T data;
+        public Node<T> Next;
+        public Node(T data)
         {
             this.data = data;
         }

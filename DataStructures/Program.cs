@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack");
+                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue 4.BankingCashCounter 5.BalancedParanthesis");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -29,22 +29,33 @@ namespace DataStructures
                         linkedList.Search(40);
                         linkedList.RemoveFirstElem();
                         linkedList.Display();
-                        linkedList.Size();
-                        linkedList.Sort();
-                        linkedList.Display();
                         break;
                     case 2:
-                        LinkedListStack linkedListStack = new LinkedListStack();
-                        linkedListStack.Push(56);
-                        linkedListStack.Push(30);
-                        linkedListStack.Push(70);
+                        LinkedListStack<string> linkedListStack = new LinkedListStack<string>();
+                        linkedListStack.Push("I am");
+                        linkedListStack.Push("not");
+                        linkedListStack.Push("contents");
                         linkedListStack.Peek();
                         linkedListStack.Pop();
                         linkedListStack.IsEmpty();
                         linkedListStack.Display();
                         break;
-                    default:
-                        Console.WriteLine("choose valid one");
+                    case 3:
+                        LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
+                        linkedListQueue.Enqueue("Nibedita");
+                        linkedListQueue.Enqueue("is");
+                        linkedListQueue.Enqueue("talented");
+                        linkedListQueue.Dequeue();
+                        linkedListQueue.Display();
+                        break;
+                    case 4:
+                        BankCashCounter bankingCashCounter = new BankCashCounter();
+                        bankingCashCounter.CashCounter();
+                        break;
+                    case 5:BalancedParanthesis balancedParanthesis = new BalancedParanthesis();
+                        balancedParanthesis.CheckIsBalanced();
+                        break;
+                    default:Console.WriteLine("choose valid one");
                         break;
                 }
             }
