@@ -4,12 +4,12 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class LinkedListStack
+    public class LinkedListStack<T> where T : IComparable
     {
-        public Node top;
-        public void Push(int data)
+        public Node<T> top;
+        public void Push(T data)
         {
-            Node node = new Node(data);
+            Node<T> node = new Node<T>(data);
             if (this.top == null)
             {
                 node.Next = null;
@@ -23,7 +23,7 @@ namespace DataStructures
         }
         public void Display()
         {
-            Node temp = this.top;
+            Node<T> temp = this.top;
             if (temp == null)
             {
                 Console.WriteLine("Stack is empty");
@@ -54,13 +54,12 @@ namespace DataStructures
             Console.WriteLine("data popped is{0}", this.top.data);
             this.top = this.top.Next;
         }
-        public void IsEmpty()
+        public bool IsEmpty()
         {
-            while (this.top != null)
-            {
-                Peek();
-                Pop();
-            }
+            if (this.top == null)
+                return true;
+            else
+                return false;
         }
     }
 }
