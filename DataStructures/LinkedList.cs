@@ -77,6 +77,28 @@ namespace DataStructures
             newNode.Next = prev.Next;
             prev.Next = newNode;
         }
+        public Node<T> RemoveElem(T value)
+        {
+            Node<T> temp = this.head;
+            Node<T> prev = this.head;
+            if (this.head == null)
+            {
+                this.head = null;
+            }
+            while (temp != null)
+            {
+                if (temp.data.Equals(value))
+                {
+                    prev.Next = temp.Next;
+                    Console.WriteLine("data is searched");
+                    Console.WriteLine("searched data is removing:" + temp.data + " ");
+                    return temp;
+                }
+                prev = temp;
+                temp = temp.Next;
+            }
+            return this.head;
+        }
         public Node<T> RemoveFirstElem()
         {
             if (this.head == null)
@@ -112,6 +134,7 @@ namespace DataStructures
                 if (temp.data.Equals(value))
                 {
                     Console.WriteLine("searched data is:" + temp.data + " ");
+
                     return true;
                 }
                 temp = temp.Next;
