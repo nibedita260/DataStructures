@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList");
+                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -33,12 +33,21 @@ namespace DataStructures
                         linkedList.Sort();
                         linkedList.Display();
                         break;
+                    case 2:
+                        LinkedListStack linkedListStack = new LinkedListStack();
+                        linkedListStack.Push(56);
+                        linkedListStack.Push(30);
+                        linkedListStack.Push(70);
+                        linkedListStack.Peek();
+                        linkedListStack.Pop();
+                        linkedListStack.IsEmpty();
+                        linkedListStack.Display();
+                        break;
                     default:
                         Console.WriteLine("choose valid one");
                         break;
                 }
             }
-
         }
     }
 }
