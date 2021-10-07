@@ -4,30 +4,30 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class LinkedList
+    public class LinkedList<T> where T : IComparable
     {
-        public Node head;
-        public void Add(int data)
+        public Node<T> head;
+        public void Add(T data)
         {
-            Node node = new Node(data);
+            Node<T> node = new Node<T>(data);
             if (this.head == null)
             {
                 head = node;
             }
             else
             {
-                Node temp = head;
+                Node<T> temp = head;
                 while (temp.Next != null)
                 {
                     temp = temp.Next;
                 }
                 temp.Next = node;
             }
-            Console.WriteLine("{0} inserted into linkedList" ,node.data);
+            Console.WriteLine("{0} inserted into linkedList", node.data);
         }
         public void Display()
         {
-            Node temp = this.head;
+            Node<T> temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("LinkedList is empty");
@@ -39,36 +39,36 @@ namespace DataStructures
                 temp = temp.Next;
             }
         }
-        public void AddReverseData(int data)
+        public void AddReverseData(T data)
         {
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<T>(data);
             if (this.head == null)
             {
                 this.head = newNode;
             }
             else
             {
-                Node temp = this.head;
+                Node<T> temp = this.head;
                 head = newNode;
                 head.Next = temp;
             }
         }
-        public void InsertedAtPosition(int data,int pos)
+        public void InsertedAtPosition(T data, int pos)
         {
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<T>(data);
             if (this.head == null)
             {
-                this.head= newNode; 
+                this.head = newNode;
             }
             if (pos == 0)
             {
                 newNode.Next = head;
                 this.head = newNode;
             }
-            Node prev = null;
-            Node curr = this.head;
+            Node<T> prev = null;
+            Node<T> curr = this.head;
             int count = 0;
-            while(curr!=null && count <pos)
+            while (curr != null && count < pos)
             {
                 prev = curr;
                 curr = curr.Next;
@@ -77,7 +77,7 @@ namespace DataStructures
             newNode.Next = prev.Next;
             prev.Next = newNode;
         }
-        public Node RemoveFirstElem()
+        public Node<T> RemoveFirstElem()
         {
             if (this.head == null)
             {
@@ -86,7 +86,7 @@ namespace DataStructures
             this.head = this.head.Next;
             return this.head;
         }
-        public Node RemoveLastElem()
+        public Node<T> RemoveLastElem()
         {
             if (this.head == null)
             {
@@ -96,7 +96,7 @@ namespace DataStructures
             {
                 head.Next = null;
             }
-            Node newNode = head;
+            Node<T> newNode = head;
             while (newNode.Next.Next != null)
             {
                 newNode = newNode.Next;
@@ -104,17 +104,61 @@ namespace DataStructures
             newNode.Next = null;
             return head;
         }
-        public Node Search(int value)
+        public bool Search(int value)
         {
-            while (this.head != null)
+            Node<T> temp = this.head;
+            while (temp != null)
             {
-                if (this.head.data == value)
+                if (temp.data.Equals(value))
                 {
-                    return this.head;
+                    Console.WriteLine("searched data is:" + temp.data + " ");
+                    return true;
                 }
-                this.head = this.head.Next;
+                temp = temp.Next;
             }
-            return null;
+            return false;
         }
+        public void Size()
+        {
+            Node<T> temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            int count = 0;
+            while (temp != null)
+            {
+                //Console.WriteLine(temp.data + " ");
+                temp = temp.Next;
+                count++;
+            }
+            Console.WriteLine("Size of the LinkedList is " + count);
+        }
+        //public void Sort()
+        //{
+        //    Node<T> temp = this.head;
+        //    if (temp == null)
+        //    {
+        //        temp = this.head;
+        //    }
+        //    Node<T> prev = this.head;
+        //    Node<T> curr = this.head.Next;
+        //    while (prev != null) {
+        //        curr = prev.Next;
+        //        while (curr != null)
+        //        {
+        //            if (prev.data.CompareTo(curr.data)>0)
+        //            {
+        //                temp = prev.data;
+        //                prev.data = curr.data;
+        //                curr.data = temp;
+        //                Console.WriteLine(curr + " ");
+        //            }
+        //            curr = curr.Next;
+        //        }
+        //        prev = prev.Next;
+        //    }
+        //}
     }
 }
