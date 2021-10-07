@@ -4,7 +4,11 @@ using System.Text;
 
 namespace DataStructures
 {
+<<<<<<< HEAD
     public class LinkedList<T> where T:IComparable
+=======
+    public class LinkedList<T> where T : IComparable
+>>>>>>> UC3-Queue
     {
         public Node<T> head;
         public void Add(T data)
@@ -23,7 +27,7 @@ namespace DataStructures
                 }
                 temp.Next = node;
             }
-            Console.WriteLine("{0} inserted into linkedList" ,node.data);
+            Console.WriteLine("{0} inserted into linkedList", node.data);
         }
         public void Display()
         {
@@ -53,12 +57,16 @@ namespace DataStructures
                 head.Next = temp;
             }
         }
+<<<<<<< HEAD
         public void InsertedAtPosition(T data,int pos)
+=======
+        public void InsertedAtPosition(T data, int pos)
+>>>>>>> UC3-Queue
         {
             Node<T> newNode = new Node<T>(data);
             if (this.head == null)
             {
-                this.head= newNode; 
+                this.head = newNode;
             }
             if (pos == 0)
             {
@@ -68,7 +76,7 @@ namespace DataStructures
             Node<T> prev = null;
             Node<T> curr = this.head;
             int count = 0;
-            while(curr!=null && count <pos)
+            while (curr != null && count < pos)
             {
                 prev = curr;
                 curr = curr.Next;
@@ -111,7 +119,11 @@ namespace DataStructures
             {
                 if (temp.data.Equals(value))
                 {
+<<<<<<< HEAD
                     Console.WriteLine("searched data is:"+temp.data+" ");
+=======
+                    Console.WriteLine("searched data is:" + temp.data + " ");
+>>>>>>> UC3-Queue
                     return true;
                 }
                 temp = temp.Next;
