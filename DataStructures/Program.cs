@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList" );
+                Console.WriteLine("Choose 1:LinkedList 2.");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -31,14 +31,13 @@ namespace DataStructures
                         //linkedList.Display();
                         linkedList.Size();
                         //linkedList.Sort();
+                        //linkedList.RemoveFirstElem();
                         linkedList.Display();
                         break;
-                    default:
-                        Console.WriteLine("choose valid one");
+                    default:Console.WriteLine("choose valid options");
                         break;
                 }
             }
-
         }
     }
 }
