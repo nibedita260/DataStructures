@@ -10,48 +10,52 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedList 2:LinkedListStack 3.LinkedListQueue");
+                Console.WriteLine("Choose 1:LinkedListGenerics 2:LinkedListStackGenerics 3.LinkedListQueueGenerics");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
                     case 1:
-                        LinkedList linkedList = new LinkedList();
+                        LinkedList<int> linkedList = new LinkedList<int>();
                         linkedList.Add(56);
                         linkedList.Add(30);
                         linkedList.Add(70);
                         linkedList.AddReverseData(70);
                         linkedList.AddReverseData(30);
                         linkedList.AddReverseData(56);
-                        linkedList.InsertedAtPosition(30, 1);
+                        linkedList.InsertedAtPosition(40, 1);
                         linkedList.RemoveFirstElem();
                         linkedList.RemoveLastElem();
-                        linkedList.InsertedAtPosition(40, 2);
+                        linkedList.InsertedAtPosition(45, 2);
                         linkedList.Search(40);
-                        linkedList.RemoveFirstElem();
+                        //linkedList.RemoveFirstElem();
+                        //linkedList.Display();
+                        linkedList.Size();
+                        //linkedList.Sort();
                         linkedList.Display();
                         break;
                     case 2:
-                        LinkedListStack linkedListStack = new LinkedListStack();
-                        linkedListStack.Push(56);
-                        linkedListStack.Push(30);
-                        linkedListStack.Push(70);
+                        LinkedListStack<string> linkedListStack = new LinkedListStack<string>();
+                        linkedListStack.Push("I am");
+                        linkedListStack.Push("not");
+                        linkedListStack.Push("contents");
                         linkedListStack.Peek();
                         linkedListStack.Pop();
                         linkedListStack.IsEmpty();
                         linkedListStack.Display();
                         break;
-                    case 3:LinkedListQueue linkedListQueue = new LinkedListQueue();
-                        linkedListQueue.Enqueue(56);
-                        linkedListQueue.Enqueue(30);
-                        linkedListQueue.Enqueue(70);
+                    case 3:
+                        LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
+                        linkedListQueue.Enqueue("Nibedita");
+                        linkedListQueue.Enqueue("is");
+                        linkedListQueue.Enqueue("talented");
                         linkedListQueue.Dequeue();
                         linkedListQueue.Display();
                         break;
-                    default:Console.WriteLine("choose valid one");
+                    default:
+                        Console.WriteLine("choose valid one");
                         break;
                 }
             }
-           
         }
     }
 }
