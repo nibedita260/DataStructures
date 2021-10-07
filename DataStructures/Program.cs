@@ -44,7 +44,7 @@ namespace DataStructures
                         LinkedListQueue<string> linkedListQueue = new LinkedListQueue<string>();
                         linkedListQueue.Enqueue("Nibedita");
                         linkedListQueue.Enqueue("is");
-                        linkedListQueue.Enqueue("talented");
+                        linkedListQueue.Enqueue("good");
                         linkedListQueue.Dequeue();
                         linkedListQueue.Display();
                         break;
@@ -55,7 +55,7 @@ namespace DataStructures
                     case 5:BalancedParanthesis balancedParanthesis = new BalancedParanthesis();
                         balancedParanthesis.CheckIsBalanced();
                         break;
-                    default:Console.WriteLine("choose valid one");
+                    default:Console.WriteLine("choose valid options");
                         break;
                 }
             }
