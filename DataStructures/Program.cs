@@ -10,11 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-<<<<<<< HEAD
-                Console.WriteLine("Choose 1:LinkedList 2.");
-=======
                 Console.WriteLine("Choose 1:LinkedListGenerics 2:LinkedListStackGenerics 3.LinkedListQueueGenerics");
->>>>>>> UC3-Queue
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -35,12 +31,7 @@ namespace DataStructures
                         //linkedList.Display();
                         linkedList.Size();
                         //linkedList.Sort();
-<<<<<<< HEAD
                         //linkedList.RemoveFirstElem();
-                        linkedList.Display();
-                        break;
-                    default:Console.WriteLine("choose valid options");
-=======
                         linkedList.Display();
                         break;
                     case 2:
@@ -63,7 +54,6 @@ namespace DataStructures
                         break;
                     default:
                         Console.WriteLine("choose valid one");
->>>>>>> UC3-Queue
                         break;
                 }
             }

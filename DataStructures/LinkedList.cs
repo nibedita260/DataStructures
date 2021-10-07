@@ -4,11 +4,7 @@ using System.Text;
 
 namespace DataStructures
 {
-<<<<<<< HEAD
-    public class LinkedList<T> where T:IComparable
-=======
     public class LinkedList<T> where T : IComparable
->>>>>>> UC3-Queue
     {
         public Node<T> head;
         public void Add(T data)
@@ -57,11 +53,7 @@ namespace DataStructures
                 head.Next = temp;
             }
         }
-<<<<<<< HEAD
-        public void InsertedAtPosition(T data,int pos)
-=======
         public void InsertedAtPosition(T data, int pos)
->>>>>>> UC3-Queue
         {
             Node<T> newNode = new Node<T>(data);
             if (this.head == null)
@@ -119,11 +111,7 @@ namespace DataStructures
             {
                 if (temp.data.Equals(value))
                 {
-<<<<<<< HEAD
-                    Console.WriteLine("searched data is:"+temp.data+" ");
-=======
                     Console.WriteLine("searched data is:" + temp.data + " ");
->>>>>>> UC3-Queue
                     return true;
                 }
                 temp = temp.Next;
