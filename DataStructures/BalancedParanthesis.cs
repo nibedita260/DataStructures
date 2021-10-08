@@ -7,8 +7,8 @@ namespace DataStructures
     class BalancedParanthesis
     {
         public LinkedListStack<char> stack = new LinkedListStack<char>();
-        //public readonly string expresion = "(5+6)*(7+8)/(4+3)(5+6)*(7+8)/(4+3)";
-        public readonly string expresion = "[(])";
+        public readonly string expresion = "(5+6)*(7+8)/(4+3)(5+6)*(7+8)/(4+3)";
+        //public readonly string expresion = "[(])";
         public void CheckIsBalanced()
         {
             char[] ExpArray = expresion.ToCharArray();

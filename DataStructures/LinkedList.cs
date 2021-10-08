@@ -158,30 +158,32 @@ namespace DataStructures
             }
             Console.WriteLine("Size of the LinkedList is " + count);
         }
-        //public void Sort()
-        //{
-        //    Node<T> temp = this.head;
-        //    if (temp == null)
-        //    {
-        //        temp = this.head;
-        //    }
-        //    Node<T> prev = this.head;
-        //    Node<T> curr = this.head.Next;
-        //    while (prev != null) {
-        //        curr = prev.Next;
-        //        while (curr != null)
-        //        {
-        //            if (prev.data.CompareTo(curr.data)>0)
-        //            {
-        //                temp = prev.data;
-        //                prev.data = curr.data;
-        //                curr.data = temp;
-        //                Console.WriteLine(curr + " ");
-        //            }
-        //            curr = curr.Next;
-        //        }
-        //        prev = prev.Next;
-        //    }
-        //}
+        public void Sort()
+        {
+            Node<T> prev = this.head, curr = null;
+            T temp;
+            if(this.head == null)
+            {
+                return;
+            }
+            else
+            {
+                while (prev != null)
+                {
+                    curr = prev.Next;
+                    while (curr != null)
+                    {
+                        if (prev.data.CompareTo(curr.data) > 0)
+                        {
+                            temp = prev.data;
+                            prev.data = curr.data;
+                            curr.data = temp;
+                        }
+                        curr = curr.Next;
+                    }
+                    prev = prev.Next;
+                }
+            }
+        }
     }
 }

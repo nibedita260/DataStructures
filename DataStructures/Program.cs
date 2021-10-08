@@ -10,7 +10,7 @@ namespace DataStructures
             bool isExit = false;
             while (!isExit)
             {
-                Console.WriteLine("Choose 1:LinkedListGenerics 2:LinkedListStackGenerics 3.LinkedListQueueGenerics 4.BankingCashCounter 5.BalancedParanthesis 6.UnOrderedList 7.OrderedList");
+                Console.WriteLine("Choose 1:LinkedListGenerics 2:LinkedListStackGenerics 3.LinkedListQueueGenerics 4.BankingCashCounter 5.BalancedParanthesis 6.UnOrderedList 7.OrderedList 8.HashingForSearchNumber");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -19,18 +19,18 @@ namespace DataStructures
                         linkedList.Add(56);
                         linkedList.Add(30);
                         linkedList.Add(70);
-                        linkedList.AddReverseData(70);
-                        linkedList.AddReverseData(30);
-                        linkedList.AddReverseData(56);
-                        linkedList.InsertedAtPosition(40, 1);
-                        linkedList.RemoveFirstElem();
-                        linkedList.RemoveLastElem();
-                        linkedList.InsertedAtPosition(45, 2);
-                        linkedList.Search(40);
+                        //linkedList.AddReverseData(70);
+                        //linkedList.AddReverseData(30);
+                        //linkedList.AddReverseData(56);
+                        //linkedList.InsertedAtPosition(40, 1);
+                        //linkedList.RemoveFirstElem();
+                        //linkedList.RemoveLastElem();
+                        //linkedList.InsertedAtPosition(45, 2);
+                        //linkedList.Search(40);
                         //linkedList.RemoveFirstElem();
                         //linkedList.Display();
                         linkedList.Size();
-                        //linkedList.Sort();
+                        linkedList.Sort();
                         //linkedList.RemoveFirstElem();
                         linkedList.Display();
                         break;
@@ -63,6 +63,9 @@ namespace DataStructures
                         break;
                     case 7:OrderedList orderedList = new OrderedList();
                         orderedList.IsSearchNumberFound();
+                        break;
+                    case 8:HashingForSearchNUm hashingForSearchNUm = new HashingForSearchNUm();
+                        hashingForSearchNUm.IsSearchNumberFoundAndSave();
                         break;
                     default:
                         Console.WriteLine("choose valid one");
